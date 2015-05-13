@@ -1,0 +1,219 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Diskache</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Diskache: disk caching utility">
+    <meta name="author" content="Victor Milovanov">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Clean CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+    <link href="css/diskache.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+    <script src="js/diskache.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/post-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1 class="appear-animation" style="opacity: 0">Diskache - much less</h1>
+          <h1><span class="appear-animation" style="opacity: 0">"</span>loading...<span class="appear-animation" style="opacity: 0">"</span></h1>
+          <span class="meta appear-animation" style="opacity: 0">Disk caching software for Windows</span>
+          <span class="meta padding">&nbsp;</span>
+          <span class="meta appear-animation kickstarter" style="opacity: 0"><a href="kickstarter">Support us on Kickstarer!</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p>
+          Diskache is a caching software, that transparently combines large slow disks and fast small
+          ones to get advantages of both. It intelligently manages data across them, caching frequently
+          accessed file chunks on your fast disk.
+        </p>
+        <h2 class="section-heading">What is it for?</h2>
+        <p>
+          Usually, the faster your disk is, the more you pay for it per 1GB of storage. As a result, many modern
+          desktop computers, laptops and workstations contain a <span class="thegame">s</span>maller
+          fa<span class="thegame">s</span>t <span class="thegame">d</span>isk with size around 100GB,
+          which is used to store frequently used programs and documents, complemented with one or more
+          hig<span class="thegame">h</span>er capacity <span class="thegame">d</span>isks, which
+          provi<span class="thegame">d</span>e terabytes of cheaper storage.
+        </p>
+        <p>
+          A single modern <span class="thegame">g</span>ame wi<span class="thegame">t</span>h
+          <span class="thegame">a</span>dvanced <span class="thegame">v</span>ideo quality for a PC can now occupy
+          more than 50GB of storage by its own. And if you want
+          to install 3 of those, there's a all-or-nothing compromise: one of them will have to go to
+          a slow disk, which means long "loading..." screen during launch and/or between scenes.
+        </p>
+        <p>
+          Home photo and <span class="thegame">v</span>ideo co<span class="thegame">l</span>le<span class="thegame">c</span>tions also often end up on slow drives, and navigating through them becomes
+          painfull while you wait for thumbnails to show up.
+        </p>
+        <p>
+          Software source code, your company data assets, Downloads folder, especially <span class="thegame">c</span>ombined, will
+          eventually grow big enoug<span class="thegame">h</span> to fo<span class="thegame">r</span>ce you to decide,
+          which <span class="thegame">o</span>f the<span class="thegame">m</span> you can tol<span class="thegame">e</span>rate being available at lower speed.
+        </p>
+        <p>
+          Diskache can intelligently make this decision for you. It will probably still store your
+          movie collection on a bigger slower drive, but some 30 first seconds of each clip will be cached on a fast disk,
+          which will allow you to quickly navigate through the collection, and start playback instantly.
+          Game files will be distributed in accordance to how frequently they are being loaded.
+          The files you are working on the most will be faster to write and read even though they will
+          still lie in the same folder, as others. Rarely accessed pieces of some local database will
+          be automatically offloaded to a slower drive.
+        </p>
+        <h2 class="section-heading">How does it work?</h2>
+        <p>
+          Diskache hides physical disks behind a virtual disk. Software remembers which data has been read
+          and written to its virtual disk during your normal system operation, and also keeps track of
+          access history and data usage patterns. This information is then used when data request comes in.
+          Based on time, chunk size, and requested data location, Diskache decides which physical disk
+          should serve the request.
+        <p>
+        <p>
+          Diskache also moves data between the fast and the slow disks to accomodate for the future
+          requests.
+        </p>
+        <h2 class="section-heading">Limitations</h2>
+        <ul>
+          <li>Windows can not be booted from virtual disks created by Diskache</li>
+          <li>Some programs might not work as expected when installed to a virtual disk</li>
+          <li>Some programs might not work with files, stored on a virtual disk</li>
+          <li>Swap files and hibernating Windows to a virtual disk is not supported</li>
+          <li>Minimum requirements: Windows XP Home Edition or Windows Server 2003</li>
+        </ul>
+        <p>Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.</p>
+        <p>Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.</p>
+        <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
+        <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
+        <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
+        <h2 class="section-heading">The Final Frontier</h2>
+        <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+        <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+        <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+        <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+        <h2 class="section-heading">Reaching for the Stars</h2>
+        <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
+        <a href="#">
+          <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
+        </a>
+        <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+        <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+        <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+        <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+  $(function () {
+    setTimeout(function () {
+      $('.appear-animation').animate({ opacity: 1 }, 1000);
+    }, 3000);
+  });
+</script>
+
+    <hr />
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Lost Tech LLC 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
