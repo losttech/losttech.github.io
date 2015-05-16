@@ -7,7 +7,7 @@
 .thegame {
   color: #889888;
 }
-p::first-letter {
+article p::first-letter {
   color: #ff6a00;
 }
 .intro-header .page-heading h1 {
