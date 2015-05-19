@@ -1,4 +1,4 @@
-var Compat;
+﻿var Compat;
 (function (Compat) {
     var Styles = (function () {
         function Styles() {
@@ -29,5 +29,35 @@ var Diskache;
         return ContactPage;
     })();
     Diskache.ContactPage = ContactPage;
+})(Diskache || (Diskache = {}));
+var Diskache;
+(function (Diskache) {
+    var IndexPage = (function () {
+        function IndexPage() {
+        }
+        IndexPage.run = function () {
+            IndexPage.playAppearAnimation();
+
+            $("#repeat").click(function (e) {
+                e.stopPropagation();
+                e.preventDefault();
+
+                IndexPage.disappear();
+                IndexPage.playAppearAnimation();
+            });
+        };
+
+        IndexPage.playAppearAnimation = function () {
+            setTimeout(function () {
+                $('.appear-animation').animate({ opacity: 1 }, 1000);
+            }, 3000);
+        };
+
+        IndexPage.disappear = function () {
+            $('.appear-animation').css("opacity", 0);
+        };
+        return IndexPage;
+    })();
+    Diskache.IndexPage = IndexPage;
 })(Diskache || (Diskache = {}));
 //# sourceMappingURL=diskache.js.map

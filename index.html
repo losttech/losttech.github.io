@@ -66,20 +66,23 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-heading">
-          <h1 class="appear-animation" style="opacity: 0">Diskache - much less</h1>
-          <h1><span class="appear-animation" style="opacity: 0">"</span>loading...<span class="appear-animation" style="opacity: 0">"</span></h1>
-          <span class="meta appear-animation" style="opacity: 0">Disk caching software for Windows</span>
-          <span class="meta padding">&nbsp;</span>
-          <span class="meta padding">&nbsp;</span>
-          <span class="meta appear-animation kickstarter" style="opacity: 0"><a href="kickstarter">Support us on Kickstarer!</a></span>
-        </div>
-      </div>
-    </div>
-  </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<div class="post-heading">
+					<h1 class="appear-animation" style="opacity: 0">Diskache - much less</h1>
+					<h1><span class="appear-animation" style="opacity: 0">"</span>loading...<span class="appear-animation" style="opacity: 0">"</span></h1>
+					<span class="meta appear-animation" style="opacity: 0">Disk caching software for Windows</span>
+					<span class="meta padding">&nbsp;</span>
+					<span class="meta padding">&nbsp;</span>
+					<span class="meta appear-animation kickstarter" style="opacity: 0"><a href="kickstarter">Support us on Kickstarer!</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+  <a id="repeat" class="bottom-right-icon appear-animation" href="#" title="repeat" style="opacity: 0">
+    <span class="fa fa-repeat"></span>
+  </a>
 </header>
 
 <!-- Main Content -->
@@ -158,11 +161,7 @@
 <p class="copyright text-muted photo-credit">Photo credit: <a href="http://www.flickr.com/photos/dijutaltim/4232353526/">DijutalTim</a> / <a href="http://foter.com/">Foter</a> / <a href="http://creativecommons.org/licenses/by/2.0/">CC BY</a></p>
 
 <script>
-  $(function () {
-    setTimeout(function () {
-      $('.appear-animation').animate({ opacity: 1 }, 1000);
-    }, 3000);
-  });
+  Diskache.IndexPage.run();
 </script>
 
   <hr />
