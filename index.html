@@ -66,21 +66,21 @@
 <!-- Page Header -->
 <!-- Set your background image for this header on the line below. -->
 <header class="intro-header" style="background-image: url('img/post-bg.jpg')">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-				<div class="post-heading">
-					<h1 class="appear-animation" style="opacity: 0">Diskache - much less</h1>
-					<h1><span class="appear-animation" style="opacity: 0">"</span>loading...<span class="appear-animation" style="opacity: 0">"</span></h1>
-					<span class="meta appear-animation" style="opacity: 0">Disk caching software for Windows</span>
-					<span class="meta padding">&nbsp;</span>
-					<span class="meta padding">&nbsp;</span>
-					<span class="meta appear-animation kickstarter" style="opacity: 0"><a href="kickstarter">Support us on Kickstarer!</a></span>
-				</div>
-			</div>
-		</div>
-	</div>
-  <a id="repeat" class="bottom-right-icon appear-animation" href="#" title="repeat" style="opacity: 0">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1 class="appear-animation" style="opacity: 0">Diskache - much less</h1>
+          <h1><span class="appear-animation" style="opacity: 0">"</span>loading...<span class="appear-animation" style="opacity: 0">"</span></h1>
+          <span class="meta appear-animation" style="opacity: 0">Disk caching software for Windows</span>
+          <span class="meta padding">&nbsp;</span>
+          <span class="meta padding">&nbsp;</span>
+          <span class="meta appear-animation kickstarter" style="opacity: 0"><a href="kickstarter">Support us on Kickstarer!</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a id="repeat" class="bottom-right-icon appear-animation" href="#" title="replay" style="opacity: 0">
     <span class="fa fa-repeat"></span>
   </a>
 </header>
@@ -95,7 +95,14 @@
           ones to get advantages of both. It intelligently manages data across them, caching frequently
           accessed file chunks on your fast disk.
         </p>
+
+        <a href="#">
+          <img class="img-responsive" src="img/low-space.png" alt="">
+        </a>
+        <span class="caption text-muted">Windows 7 urges you to <a href="kickstarter">back us on Kickstarter</a>.</span>
+
         <h2 class="section-heading">What is it for?</h2>
+        <p>TL;DR; <a href="#prototype">go to benchmark</a>.</p>
         <p>
           Usually, the faster your disk is, the more you pay for it per 1GB of storage. As a result, many modern
           desktop computers, laptops and workstations contain a <span class="thegame">s</span>maller
@@ -111,10 +118,7 @@
           to install 3 of those, there's a all-or-nothing compromise: one of them will have to go to
           a slow disk, which means long "loading..." screen during launch and/or between scenes.
         </p>
-        <a href="#">
-          <img class="img-responsive" src="img/low-space.png" alt="">
-        </a>
-        <span class="caption text-muted">Windows 7 urges you to <a href="kickstarter">back us on Kickstarter</a>.</span>
+
         <p>
           Home photo and <span class="thegame">v</span>ideo co<span class="thegame">l</span>le<span class="thegame">c</span>tions also often end up on slow drives, and navigating through them becomes
           painfull while you wait for thumbnails to show up.
@@ -144,6 +148,55 @@
         <p>
           Diskache also moves data between the fast and the slow disks to accomodate for the future
           requests.
+        </p>
+        <h2 id="prototype" class="section-heading">Prototype performance</h2>
+        <p>
+          Prototype has been tested on the following configuration:
+          <ul>
+            <li>Big storage: a file on WD Red 2TB HDD</li>
+            <li>Cache storage: a file on Samsung 840 PRO SSD</li>
+            <li>CPU: Intel Core i7 3930K</li>
+            <li>RAM: 24GiB DDR3 Quad Channel 1600MHz</li>
+            <li>MB: Intel DX79TO</li>
+          </ul>
+        </p>
+        <p>
+          Random reads and writes, block size 4KiB
+          <img class="img-responsive" src="img/4k-perf.png" alt="HDD: approx. 1MB/s, SSD: approx: 18MB/s, Prototype: 12MB/s">
+        </p>
+        <p>
+          Random reads and writes, block size 32MiB
+          <img class="img-responsive" src="img/32m-perf.png" alt="HDD read: 130MB/s, write: 150MB/s, SSD read: 270MB/s, write: 100MB/s, Prototype read: 111MB/s, write: 133MB/s">
+        </p>
+        <h2 class="section-heading">Path to release</h2>
+        <p>
+          <h3>Basic features ($80,000 goal)</h3>
+          <ul>
+            <li>virtual disk stability (something prototype lacks)</li>
+            <li>simple wizard configuration</li>
+            <li>performance similar or better than prototype</li>
+            <li>advanced configuration through config file</li>
+          </ul>
+
+          <h3>Advanced features ($120,000 goal)</h3>
+          <ul>
+            <li>automatic detection of optimal configuration</li>
+            <li>better performance on large blocks</li>
+            <li>advanced configuration through UI</li>
+            <li>TRIM support</li>
+          </ul>
+
+          <h3>Top tier ($180,000 goal)</h3>
+          <ul>
+            <li>best performance via I/O scheduling</li>
+            <li>various performance visualizations</li>
+          </ul>
+
+          <h3>Enterprise tier ($300,000 goal)</h3>
+          <ul>
+            <li>Enterprise edition with support service</li>
+          </ul>
+
         </p>
         <h2 class="section-heading">Limitations</h2>
         <ul>
