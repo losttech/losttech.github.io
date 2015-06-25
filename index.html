@@ -50,6 +50,15 @@
             <a href="index.html">Home</a>
           </li>
           <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tech</a>
+            <ul class="dropdown-menu">
+              <li><a href="trim.html">TRIM</a></li>
+              <li>
+                <a href="ioschedule.html">I/O Scheduling</a>
+              </li>
+            </ul>
+          </li>
+          <li>
             <a href="about.html">About</a>
           </li>
           <li>
@@ -102,7 +111,7 @@
         <span class="caption text-muted">Windows 7 urges you to <a href="kickstarter">back us on Kickstarter</a>.</span>
 
         <h2 class="section-heading">What is it for?</h2>
-        <p>TL;DR; <a href="#prototype">go to benchmark</a>.</p>
+        <p class="text-muted">{ TL;DR; <a href="#prototype">go to benchmark</a> }</p>
         <p>
           Usually, the faster your disk is, the more you pay for it per 1GB of storage. As a result, many modern
           desktop computers, laptops and workstations contain a <span class="thegame">s</span>maller
@@ -111,6 +120,7 @@
           hig<span class="thegame">h</span>er capacity <span class="thegame">d</span>isks, which
           provi<span class="thegame">d</span>e terabytes of cheaper storage.
         </p>
+        <h3>Personal PC</h3>
         <p>
           A single modern <span class="thegame">g</span>ame wi<span class="thegame">t</span>h
           <span class="thegame">a</span>dvanced <span class="thegame">v</span>ideo quality for a PC can now occupy
@@ -123,8 +133,9 @@
           Home photo and <span class="thegame">v</span>ideo co<span class="thegame">l</span>le<span class="thegame">c</span>tions also often end up on slow drives, and navigating through them becomes
           painfull while you wait for thumbnails to show up.
         </p>
+        <h3>Workstation</h3>
         <p>
-          Software source code, your company data assets, Downloads folder, especially <span class="thegame">c</span>ombined, will
+          Software source code, your company data assets, corporate email boxes, especially <span class="thegame">c</span>ombined, will
           eventually grow big enoug<span class="thegame">h</span> to fo<span class="thegame">r</span>ce you to decide,
           which <span class="thegame">o</span>f the<span class="thegame">m</span> you can tol<span class="thegame">e</span>rate being available at lower speed.
         </p>
@@ -153,7 +164,7 @@
         <p>
           Prototype has been tested on the following configuration:
           <ul>
-            <li>Big storage: a file on WD Red 2TB HDD</li>
+            <li>Big storage: a file on Western Digital Red 2TB HDD</li>
             <li>Cache storage: a file on Samsung 840 PRO SSD</li>
             <li>CPU: Intel Core i7 3930K</li>
             <li>RAM: 24GiB DDR3 Quad Channel 1600MHz</li>
@@ -161,11 +172,11 @@
           </ul>
         </p>
         <p>
-          Random reads and writes, block size 4KiB
+          Random reads and writes, block size 4KiB, no queue
           <img class="img-responsive" src="img/4k-perf.png" alt="HDD: approx. 1MB/s, SSD: approx: 18MB/s, Prototype: 12MB/s">
         </p>
         <p>
-          Random reads and writes, block size 32MiB
+          Sequential reads and writes, no queue
           <img class="img-responsive" src="img/32m-perf.png" alt="HDD read: 130MB/s, write: 150MB/s, SSD read: 270MB/s, write: 100MB/s, Prototype read: 111MB/s, write: 133MB/s">
         </p>
         <h2 class="section-heading">Path to release</h2>
@@ -180,21 +191,22 @@
 
           <h3>Advanced features ($120,000 goal)</h3>
           <ul>
-            <li>automatic detection of optimal configuration</li>
-            <li>better performance on large blocks</li>
+            <li>automatic suggestion of optimal configuration</li>
+            <li>better performance on large blocks in some scenarios</li>
             <li>advanced configuration through UI</li>
             <li>TRIM support</li>
           </ul>
 
           <h3>Top tier ($180,000 goal)</h3>
           <ul>
-            <li>best performance via I/O scheduling</li>
+            <li>best performance via I/O scheduling with request queues</li>
             <li>various performance visualizations</li>
           </ul>
 
           <h3>Enterprise tier ($300,000 goal)</h3>
           <ul>
-            <li>Enterprise edition with support service</li>
+            <li>enterprise edition with support SLA</li>
+            <li>software compatibility database</li>
           </ul>
 
         </p>

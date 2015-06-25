@@ -24,4 +24,14 @@ article p::first-letter {
   float: right;
   color: #fff;
 }
+.navbar-custom .nav li.open li a {
+  color: #555;
+}
+/*@media only screen and (min-width:768px)*/
+@media all and (min-width: 768px) {
+  header.intro-header.empty {
+    background-color: #b4b4b4;
+    height: 60px;
+  }
+}
 /*# sourceMappingURL=diskache.css.map */

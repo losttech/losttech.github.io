@@ -72,31 +72,60 @@
   </nav>
 
   
-<!-- Page Header -->
-<!-- Set your background image for this header on the line below. -->
-<header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+<header class="intro-header empty">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-heading">
-          <h1>About Lost Tech LLC</h1>
-          <hr class="small">
-          <span class="subheading">Developing cool tools.</span>
-        </div>
       </div>
     </div>
   </div>
 </header>
+
 <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <p>We've just started! Nothing to show here yet.</p>
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <h3>What is TRIM?</h3>
+        <p>
+          A TRIM command informs a drive, that an operating system no longer expects some blocks
+          to return meaningful data. It was introduced, because solid-state drives (SSD) require a block
+          to be erased before new data can be written to it. A TRIM command allows a drive
+          to erase blocks in advance. Erasure happens in background, and when new data
+          needs to be written, some blocks are already cleaned.
+        </p>
+        <h3>TRIM in Diskache</h3>
+        <p>
+          There are some scenarios, when handling and issuing TRIM commands can increase
+          cached disk performance.
+        </p>
+
+        <p>
+          First, if cache or primary storage is located on an SSD, Diskache will be able to pass
+          TRIM command to it, so that it could start erasing in background. Without that, write performance
+          might be lower than optimal: as soon as the disk is filled up once, every block update
+          will have to be preceded with synchronous erasure.
+        </p>
+
+        <p>
+          This might not be as bad as it sounds if SSD contains some other mutable data besides
+          cache or primary storage images. Operating system will issue TRIM commands for that data,
+          which might supply enough pre-erased blocks for Diskache updates.
+        </p>
+
+        <p>
+          Second, even for ordinary hard drives, TRIM commands coming from an operating system
+          will allow Diskache to reuse dirty cache blocks without writing them to primary
+          storage first. Normally, when a block is evicted from cache, it has to be copied to
+          the primary storage before new block takes its place. However, if a block is marked as
+          "trimmed", there is no need to copy, as the data in it is considered obsolete by
+          the operating system.
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</article>
 
-<p class="copyright text-muted photo-credit">Photo credit: <a href="https://www.flickr.com/photos/julieleuthold/15467943470/">jjlcooterpie</a> / <a href="http://foter.com/">Foter</a> / <a href="http://creativecommons.org/licenses/by/2.0/">CC BY</a></p>
 
   <hr />
 
