@@ -86,40 +86,66 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <h3>What is TRIM?</h3>
+        <h3>I/O in the prototype</h3>
         <p>
-          A TRIM command informs a drive, that an operating system no longer expects some blocks
-          to return meaningful data. It was introduced, because solid-state drives (SSD) require a block
-          to be erased before new data can be written to it. A TRIM command allows a drive
-          to erase blocks in advance. Erasure happens in background, and when new data
-          needs to be written, some blocks are already cleaned.
-        </p>
-        <h3>TRIM in Diskache</h3>
-        <p>
-          There are some scenarios, when handling and issuing TRIM commands can increase
-          cached disk performance.
+          Windows talks to disk drivers by means of sending I/O request packets. Diskache prototype
+          puts them into a queue, and executes one by one in the order they arrived (FIFO).
         </p>
 
         <p>
-          First, if cache or primary storage is located on an SSD, Diskache will be able to pass
-          TRIM command to it, so that it could start erasing in background. Without that, write performance
-          might be lower than optimal: as soon as the disk is filled up once, every block update
-          will have to be preceded with synchronous erasure.
+          It dequeues a packet, and, if the requested data is already cached, serves it
+          directly from the fast disk. Otherwise, Diskache passes the request to the main storage. It
+          might also decide to move this block to the fast disk, if the data is used often. In this case
+          Diskache will wait for a block in cache to be ready (usually, there are plenty of them already prepared
+          by a background thread), put the data there, and update information about cache contents.
         </p>
 
         <p>
-          This might not be as bad as it sounds if SSD contains some other mutable data besides
-          cache or primary storage images. Operating system will issue TRIM commands for that data,
-          which might supply enough pre-erased blocks for Diskache updates.
+          Diskache then notifies Windows, that I/O request is completed, and picks up the next one.
+          This is a long process with only one disk involved at the same time. The other storage unit is idle.
+        </p>
+
+        <h3>Asynchronous I/O</h3>
+        <p>
+          It is not necessary to wait for the last request to complete before picking up the next one.
+          If a request is being served from cache, and the next request in the queue is known to require main
+          storage access, it can be started immediately. While slower main storage is busy serving a request,
+          Diskache can manage to complete many I/O packets for cached data.
+        </p>
+
+        <h3>I/O Scheduling</h3>
+        <p>
+          This can be extended further: even if no main storage requests have been picked up yet,
+          Diskache could go ahead, and scan the entire queue for such a packet, and start executing it
+          in advance.
+        </p>
+        <p>
+          In general, Diskache could reorder some requests to optimize load between the cache and the
+          main storage. For example, when the packet queue is full, but no request is meant for the main storage,
+          Diskache could pick up a request from the end of the queue, and forward it to the main storage hoping
+          it will be completed by the time its turn would come normally.
+        </p>
+
+        <h3>The Challenge</h3>
+        <p>
+          While it might sound easy to do, this is actually quite hard to achieve. Diskache maintains
+          an internal data structure, which contains information about blocks, stored in the cache.
+          The main problem is ensuring integrity of that structure in case of power failure.
         </p>
 
         <p>
-          Second, even for ordinary hard drives, TRIM commands coming from an operating system
-          will allow Diskache to reuse dirty cache blocks without writing them to primary
-          storage first. Normally, when a block is evicted from cache, it has to be copied to
-          the primary storage before new block takes its place. However, if a block is marked as
-          "trimmed", there is no need to copy, as the data in it is considered obsolete by
-          the operating system anyway.
+          Each write operation, which allocates a new entry in the cache, requires an update to this structure,
+          and an actual data write. Hardware reset might happen between them. If the original block address is changed
+          for an entry, but the data is not updated, next read at this address will return data from a wrong block,
+          which totally ruins integrity. An opposite situation has a similar problem.
+        </p>
+
+        <p>
+          In the prototype (with its sequential request execution), this situation can be easily caught by
+          maintaining a linear operation log. After reset, it will be clear which operations succeeded, and which
+          did not. An appropriate action can be taken to correct the situation. If Diskache schedules I/O,
+          linear log will no longer be enough, and rolling back or retrying multiple operations, interrupted
+          on different phases of execution, will be required.
         </p>
       </div>
     </div>
