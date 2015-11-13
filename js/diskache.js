@@ -1,4 +1,4 @@
-﻿var Compat;
+var Compat;
 (function (Compat) {
     var Styles = (function () {
         function Styles() {
@@ -22,7 +22,9 @@ var Diskache;
                 var message = $("#message").val();
                 var body = message + "\r\n\r\n" + from + (phone ? "\r\n" + phone : "");
                 var productName = $("#product").val();
-                var link = "mailto:" + encodeURIComponent('"Lost Tech"<contactus@lost.tech>') + "?subject=" + encodeURIComponent(productName) + "&body=" + escape(body);
+                var link = "mailto:" + encodeURIComponent('"Diskache Contact Email"<contact@diskache.io>')
+                    + "?subject=" + encodeURIComponent(productName)
+                    + "&body=" + escape(body);
                 window.location.href = link;
             });
         };
@@ -36,26 +38,33 @@ var Diskache;
         function IndexPage() {
         }
         IndexPage.run = function () {
-            IndexPage.playAppearAnimation();
-
+            var playAnimation = !window.localStorage
+                || (localStorage.getItem(IndexPage.mainAnimationPlayed) != "1");
+            if (playAnimation)
+                IndexPage.playAppearAnimation();
+            else
+                IndexPage.appearInstantly();
+            if (window.localStorage)
+                localStorage.setItem(IndexPage.mainAnimationPlayed, "1");
             $("#repeat").click(function (e) {
                 e.stopPropagation();
                 e.preventDefault();
-
                 IndexPage.disappear();
                 IndexPage.playAppearAnimation();
             });
         };
-
         IndexPage.playAppearAnimation = function () {
             setTimeout(function () {
                 $('.appear-animation').animate({ opacity: 1 }, 1000);
             }, 3000);
         };
-
+        IndexPage.appearInstantly = function () {
+            $('.appear-animation').css("opacity", 1);
+        };
         IndexPage.disappear = function () {
             $('.appear-animation').css("opacity", 0);
         };
+        IndexPage.mainAnimationPlayed = "index.mainAnimation";
         return IndexPage;
     })();
     Diskache.IndexPage = IndexPage;
