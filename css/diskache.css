@@ -1,7 +1,7 @@
 ﻿.appear-animation {
   opacity: 0;
 }
-.kickstarter {
+.heading-link {
   text-align: right;
 }
 .thegame {
@@ -34,4 +34,3 @@ article p::first-letter {
     height: 60px;
   }
 }
-/*# sourceMappingURL=diskache.css.map */
