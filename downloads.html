@@ -87,59 +87,50 @@
 
   
 <header class="intro-header empty">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            </div>
+        </div>
     </div>
-  </div>
 </header>
 
-<!-- Main Content -->
 <article>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <h3>What is TRIM?</h3>
-        <p>
-          A TRIM command informs a drive, that an operating system no longer expects some blocks
-          to return meaningful data. It was introduced, because solid-state drives (SSD) require a block
-          to be erased before new data can be written to it. A TRIM command allows a drive
-          to erase blocks in advance. Erasure happens in background, and when new data
-          needs to be written, some blocks are already cleaned.
-        </p>
-        <h3>TRIM in Diskache</h3>
-        <p>
-          There are some scenarios, when handling and issuing TRIM commands can increase
-          cached disk performance.
-        </p>
-
-        <p>
-          First, if cache or primary storage is located on an SSD, Diskache will be able to pass
-          TRIM command to it, so that it could start erasing in background. Without that, write performance
-          might be lower than optimal: as soon as the disk is filled up once, every block update
-          will have to be preceded with synchronous erasure.
-        </p>
-
-        <p>
-          This might not be as bad as it sounds if SSD contains some other mutable data besides
-          cache or primary storage images. Operating system will issue TRIM commands for that data,
-          which might supply enough pre-erased blocks for Diskache updates.
-        </p>
-
-        <p>
-          Second, even for ordinary hard drives, TRIM commands coming from an operating system
-          will allow Diskache to reuse dirty cache blocks without writing them to primary
-          storage first. Normally, when a block is evicted from cache, it has to be copied to
-          the primary storage before new block takes its place. However, if a block is marked as
-          "trimmed", there is no need to copy, as the data in it is considered obsolete by
-          the operating system anyway.
-        </p>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3>Download Diskache Beta</h3>
+                <p>Since the product is in early Beta, it is important to follow installation steps</p>
+                <h2>Quickstart</h2>
+                <ul>
+                    <li>
+                        Download <a href="https://losttechpers.blob.core.windows.net/releases/Diskache-0.1.0a.exe"
+                                 >Diskache Beta 0.1.0 archive</a>
+                    </li>
+                    <li>
+                        Run it, and select a directory to unpack to
+                    </li>
+                    <li>
+                        Open that directory, and run Diskache.exe
+                    </li>
+                    <li>
+                        Follow prompts
+                    </li>
+                    <li>
+                        Once all dependencies are installed, click "Start" button
+                    </li>
+                    <li>
+                        Click "Create" button to create your first cached disk
+                        <p class="caption text-muted" style="text-align: initial;">Click on a size slider, and use arrow keys on the keyboard to achieve 1GiB precision.</p>
+                    </li>
+                    <li>Hit "Refresh" to ensure new disk is running</li>
+                    <li>Find new disk in My Computer, right-click on it, and select "Format"</li>
+                    <li>You are ready to go! Remember to backup your information!</li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </article>
-
 
   <hr />
 
