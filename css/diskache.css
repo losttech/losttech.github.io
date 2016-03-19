@@ -2,7 +2,7 @@
   opacity: 0;
 }
 .heading-link {
-  text-align: right;
+  float: right;
 }
 .thegame {
   color: #889888;
@@ -32,5 +32,10 @@ article p::first-letter {
   header.intro-header.empty {
     background-color: #b4b4b4;
     height: 60px;
+  }
+}
+@media all and (max-width: 768px) {
+  .heading-link {
+    display: none;
   }
 }
