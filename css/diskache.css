@@ -10,6 +10,9 @@
 article p::first-letter {
   color: #ff6a00;
 }
+li .category {
+  color: #ff6a00;
+}
 .photo-credit {
   text-align: center;
   font-size: 14px;

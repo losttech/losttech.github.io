@@ -87,58 +87,35 @@
 
   
 <header class="intro-header empty">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     </div>
   </div>
+</div>
 </header>
 
 <article>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <h2>Download Diskache Beta</h2>
-        <p>See <a href="WhatsNew.html">What's New in Beta 2</a></p>
-        <p>
-          Diskache Beta 0.2 license is valid until late September 2016. After that you will need
-          to download the next beta version. Free Beta program will end in December 2016.
-          Retail price will be anounced this autumn.
-        </p>
-        <p>Since the product is in early Beta, it is important to follow installation steps:</p>
-        <h3>Quickstart</h3>
-        <ol>
+        <h2>What's new in Diskache Beta</h2>
+        <h3>Beta 2</h3>
+        <ul>
           <li>
-            Download <a href="https://losttechpers.blob.core.windows.net/releases/Diskache-0.2.0b.exe">Diskache Beta 0.2.0 archive</a>
+            <span class="category">CORE</span>: Improved disk shutdown sequence to be more reliable
+            (sometimes service would not restart if stopped manually)
           </li>
-          <li>
-            Run it, and select a directory to unpack to
-          </li>
-          <li>
-            Open that directory, and run Diskache.exe
-          </li>
-          <li>
-            Follow prompts to create a new cached disk and start the service
-          </li>
-          <li>Hit "Refresh" to ensure new disk is running</li>
-          <li>Find new disk in My Computer, right-click on it, and select "Format"</li>
-          <li>You are ready to go! Remember to backup your information!</li>
-        </ol>
-        <h3>Updating from Diskache Beta 0.1</h3>
-        <ol>
-          <li>
-            Start Diskache.exe and click Stop button to manually stop the service. Alternatively,
-            you can do the same in services.msc
-          </li>
-          <li>Close Diskache.exe if it is running</li>
-          <li>Unpack Diskache Beta 0.2 into the same directory, and ensure files are rewritten</li>
-          <li>Restart the service via Diskache.exe or services.msc</li>
-          <li>
-            In the unlikely event, that you will experience any issues with your existing disks after upgrade,
-            report the problem to <a href="mailto:contact@diskache.io">contact@diskache.io</a>
-          </li>
-        </ol>
+          <li><span class="category">UI</span>: added text input for new disk size</li>
+          <li><span class="category">UI</span>: able to manage disks when core service is not running</li>
+          <li><span class="category">UI</span>: offers to create a disk when none is defined at startup</li>
+          <li><span class="category">UI</span>: automatically refreshes after starting and stopping service</li>
+          <li><span class="category">UI</span>: shows stages of disk creation</li>
+          <li><span class="category">UI</span>: various bug fixes</li>
+          <li><span class="category">MAINTENANCE</span>: added maintenance tool: checks for updates and license expiration</li>
+          <li><span class="category">TELEMETRY</span>: added program version</li>
+          <li><span class="category">TELEMETRY</span>: added daily disk running stats</li>
+        </ul>
       </div>
     </div>
   </div>
