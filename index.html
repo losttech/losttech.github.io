@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>Diskache</title>
+  <title>Lost Tech</title>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -61,11 +61,15 @@
                 <a href="index.html">Home</a>
             </li>
             <li>
-                <a href="downloads.html">Download</a>
+                <a href="downloads.html">Downloads</a>
             </li>
           <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tech</a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Diskache</a>
             <ul class="dropdown-menu">
+              <li><a href="diskache.html">Product</a></li>
+              <li><a href="downloads.html">Download</a></li>
+              <li><a href="diskache.html#performance">Performance</a></li>
+              <li><a href="diskache-roadmap.html">Roadmap</a></li>
               <li><a href="trim.html">TRIM</a></li>
               <li>
                 <a href="ioschedule.html">I/O Scheduling</a>
@@ -119,144 +123,11 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <p>
-          Diskache is a caching software, that lets your HDD and SSD work together. It intelligently
-          manages data across them, caching frequently accessed file chunks on your fast disk.
+          Diskache lets your HDD and SSD work together. It intelligently
+          manages data across them, caching frequently accessed files on your fast disk.
         </p>
-
-        <a href="#">
-          <img class="img-responsive" src="img/low-space.png" alt="">
-        </a>
-        <span class="caption text-muted">Windows 7 urges you to <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=610036494">vote 'Yes' on Steam Greenlight</a>.</span>
-
-        <h2 class="section-heading">What is it for?</h2>
-        <p class="text-muted">{ TL;DR; <a href="#prototype">go to benchmark</a> }</p>
-          <p>
-              Usually, the faster your disk is, the more you pay for it per 1GB of storage. As a result, many modern
-              desktop computers, laptops and workstations contain a <span class="thegame">s</span>maller
-              fa<span class="thegame">s</span>t <span class="thegame">d</span>isk with size around 100GB,
-              which is used to store frequently used programs and documents, complemented with one or more
-              hig<span class="thegame">h</span>er capacity <span class="thegame">d</span>isks, which
-              provi<span class="thegame">d</span>e terabytes of cheaper storage.
-          </p>
-          <p>
-              Now instead of buying 512GB SSD for $200 you can buy a smaller one for just $70 and 
-              get nearly the same performance in most scenarios on top of existing multiTB storage.
-          </p>
-        <h3>Personal PC</h3>
-        <p>
-          A single modern <span class="thegame">g</span>ame wi<span class="thegame">t</span>h
-          <span class="thegame">a</span>d<span class="thegame">v</span>anced graphics quality for a PC can now occupy
-          more than 50GB of storage by its own. And if you want
-          to install many of those, there's an all-or-nothing compromise: one of them will have to go to
-          a slow disk, which means long "loading..." screen during launch and/or between scenes.
-        </p>
-
-        <p>
-          Home photo and <span class="thegame">v</span>ideo co<span class="thegame">l</span>le<span class="thegame">c</span>tions also often end up on slow drives, and navigating through them becomes
-          painfull while you wait for thumbnails to show up.
-        </p>
-        <h3>Workstation</h3>
-        <p>
-          Software source code, your company data assets, corporate email boxes, browser caches,
-          especially <span class="thegame">c</span>ombined, will
-          eventually grow big enoug<span class="thegame">h</span> to fo<span class="thegame">r</span>ce you to decide,
-          which <span class="thegame">o</span>f the<span class="thegame">m</span> you can tol<span class="thegame">e</span>rate being available at lower speed.
-        </p>
-        <p>
-          Diskache can intelligently make this decision for you. Some 30 first seconds of each
-          video clip from your collection will be cached on a fast disk,
-          which will allow you to quickly navigate through movies, and start playback instantly.
-          Game files will be distributed in accordance to how frequently they are being loaded.
-          The files you are working on the most will be faster to write and read even though they will
-          still lie in the same folder as others. Rarely accessed pieces of a local database will
-          be automatically offloaded to a slower drive.
-        </p>
-        <h2 class="section-heading">How does it work?</h2>
-        <p>
-          Diskache hides physical disks behind a virtual disk. Software remembers which data has been read
-          and written to its virtual disk during your normal system operation, and also keeps track of
-          access history and data usage patterns. This information is then used when data request comes in.
-          Based on time, chunk size, and requested data location, Diskache decides which physical disk
-          should serve the request.
-        <p>
-        <p>
-          Diskache also moves data between the cache and the main storage to accomodate for the future
-          requests.
-        </p>
-        <h2 id="prototype" class="section-heading">Prototype performance</h2>
-        <p>
-          Prototype has been tested on the following configuration:
-          <ul>
-            <li>Main storage: a file on Western Digital Red 2TB HDD</li>
-            <li>Cache storage: a file on Samsung 840 PRO SSD</li>
-            <li>CPU: Intel Core i7 3930K</li>
-            <li>RAM: 24GiB DDR3 Quad Channel 1600MHz</li>
-            <li>MB: Intel DX79TO</li>
-          </ul>
-        </p>
-        <p>
-          Read performance
-          <img class="img-responsive" src="img/perf-read.png" alt="SSD: seq. 250MB/s, random: 25MB/s; HDD: seq.: 130MB/s, random: 1MB/s; Diskache: seq.: 190MB/s, random: 18MB/s">
-        </p>
-        <p>
-          Write performance
-          <img class="img-responsive" src="img/perf-write.png" alt="SSD: seq. 230MB/s, random: 50MB/s; HDD: seq.: 120MB/s, random: 2MB/s; Diskache: seq.: 190MB/s, random: 18MB/s">
-        </p>
-        <p>
-          <span class="caption text-muted"><a href="downloads.html">Get hands on the prototype</a></span>
-        </p>
-        <h2 class="section-heading">Journey to release</h2>
-        <p>
-          <h3>Already in the prototype</h3>
-          <ul>
-            <li>main storage and cache can both be ordinary files, no need to resize partitions</li>
-            <li>can cache existing disk if it is not used by Windows boot process</li>
-            <li>supports write-through, if needed</li>
-            <li>supports additional in-memory caching (unsafe against power losses and hardware failures)</li>
-          </ul>
-
-          <h3>Basic features</h3>
-          <ul>
-            <li>simple wizard configuration</li>
-            <li>performance similar or better than prototype</li>
-            <li>advanced configuration through config file</li>
-          </ul>
-          
-          <h3>Advanced features (if somewhat overfunded)</h3>
-          <ul>
-            <li>automatic suggestion of optimal configuration</li>
-            <li>better performance on large blocks in some scenarios</li>
-            <li>advanced configuration through UI</li>
-            <li>TRIM support</li>
-          </ul>
-
-          <h3>Top tier (if heavily overfunded)</h3>
-          <ul>
-            <li>best performance via I/O scheduling with request queues</li>
-            <li>various performance visualizations</li>
-          </ul>
-
-          <h3>Enterprise tier</h3>
-          <ul>
-            <li>enterprise edition with support SLA</li>
-            <li>software compatibility database</li>
-          </ul>
-
-        </p>
-        <h2 class="section-heading">Limitations</h2>
-        <ul>
-          <li>Windows can not be booted from virtual disks created by Diskache</li>
-          <li>Some programs might not work as expected when installed to a virtual disk</li>
-          <li>Some programs might not work with files, stored on a virtual disk</li>
-          <li>Swap files and hibernating Windows to a virtual disk is not supported</li>
-          <li>
-            Minimum requirements:
-            <ul>
-              <li>Prototype-level performance: Windows XP Home Edition or Windows Server 2003</li>
-              <li>Advanced-level performance: Windows 7 or Windows Server 2008 R2</li>
-            </ul>
-          </li>
-        </ul>
+        
+        <a href="diskache.html">Learn more ></a>
       </div>
     </div>
   </div>

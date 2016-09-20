@@ -68,7 +68,6 @@
             <ul class="dropdown-menu">
               <li><a href="diskache.html">Product</a></li>
               <li><a href="downloads.html">Download</a></li>
-              <li><a href="diskache.html#performance">Performance</a></li>
               <li><a href="diskache-roadmap.html">Roadmap</a></li>
               <li><a href="trim.html">TRIM</a></li>
               <li>
@@ -99,77 +98,65 @@
   </div>
 </header>
 
-<!-- Main Content -->
 <article>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <h3>I/O in the prototype</h3>
         <p>
-          Windows talks to disk drivers by means of sending I/O request packets. Diskache prototype
-          puts them into a queue, and executes one by one in the order they arrived (FIFO).
-        </p>
+          <h3>Already in the prototype</h3>
+          <ul>
+            <li>main storage and cache can both be ordinary files, no need to resize partitions</li>
+            <li>can cache existing disk if it is not used by Windows boot process</li>
+            <li>supports write-through, if needed</li>
+            <li>supports additional in-memory caching (unsafe against power losses and hardware failures)</li>
+          </ul>
 
-        <p>
-          It dequeues a packet, and, if the requested data is already cached, serves it
-          directly from the fast disk. Otherwise, Diskache passes the request to the main storage. It
-          might also decide to move this block to the fast disk, if the data is used often. In this case
-          Diskache will wait for a block in cache to be ready (usually, there are plenty of them already prepared
-          by a background thread), put the data there, and update information about cache contents.
-        </p>
+          <h3>Basic features</h3>
+          <ul>
+            <li>simple wizard configuration</li>
+            <li>performance similar or better than prototype</li>
+            <li>advanced configuration through config file</li>
+          </ul>
 
-        <p>
-          Diskache then notifies Windows, that I/O request is completed, and picks up the next one.
-          This is a long process with only one disk involved at the same time. The other storage unit is idle.
-        </p>
+          <h3>Advanced features (if somewhat overfunded)</h3>
+          <ul>
+            <li>automatic suggestion of optimal configuration</li>
+            <li>better performance on large blocks in some scenarios</li>
+            <li>advanced configuration through UI</li>
+            <li>TRIM support</li>
+          </ul>
 
-        <h3>Asynchronous I/O</h3>
-        <p>
-          It is not necessary to wait for the last request to complete before picking up the next one.
-          If a request is being served from cache, and the next request in the queue is known to require main
-          storage access, it can be started immediately. While slower main storage is busy serving a request,
-          Diskache can manage to complete many I/O packets for cached data.
-        </p>
+          <h3>Top tier (if heavily overfunded)</h3>
+          <ul>
+            <li>best performance via I/O scheduling with request queues</li>
+            <li>various performance visualizations</li>
+          </ul>
 
-        <h3>I/O Scheduling</h3>
-        <p>
-          This can be extended further: even if no main storage requests have been picked up yet,
-          Diskache could go ahead, and scan the entire queue for such a packet, and start executing it
-          in advance.
-        </p>
-        <p>
-          In general, Diskache could reorder some requests to optimize load between the cache and the
-          main storage. For example, when the packet queue is full, but no request is meant for the main storage,
-          Diskache could pick up a request from the end of the queue, and forward it to the main storage hoping
-          it will be completed by the time its turn would come normally.
-        </p>
+          <h3>Enterprise tier</h3>
+          <ul>
+            <li>enterprise edition with support SLA</li>
+            <li>software compatibility database</li>
+          </ul>
 
-        <h3>The Challenge</h3>
-        <p>
-          While it might sound easy to do, this is actually quite hard to achieve. Diskache maintains
-          an internal data structure, which contains information about blocks, stored in the cache.
-          The main problem is ensuring integrity of that structure in case of power failure.
         </p>
-
-        <p>
-          Each write operation, which allocates a new entry in the cache, requires an update to this structure,
-          and an actual data write. Hardware reset might happen between them. If the original block address is changed
-          for an entry, but the data is not updated, next read at this address will return data from a wrong block,
-          which totally ruins integrity. An opposite situation has a similar problem.
-        </p>
-
-        <p>
-          In the prototype (with its sequential request execution), this situation can be easily caught by
-          maintaining a linear operation log. After reset, it will be clear which operations succeeded, and which
-          did not. An appropriate action can be taken to correct the situation. If Diskache schedules I/O,
-          linear log will no longer be enough, and rolling back or retrying multiple operations, interrupted
-          on different phases of execution, will be required.
-        </p>
+        <h2 class="section-heading">Limitations</h2>
+        <ul>
+          <li>Windows can not be booted from virtual disks created by Diskache</li>
+          <li>Some programs might not work as expected when installed to a virtual disk</li>
+          <li>Some programs might not work with files, stored on a virtual disk</li>
+          <li>Swap files and hibernating Windows to a virtual disk is not supported</li>
+          <li>
+            Minimum requirements:
+            <ul>
+              <li>Prototype-level performance: Windows XP Home Edition or Windows Server 2003</li>
+              <li>Advanced-level performance: Windows 7 or Windows Server 2008 R2</li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </article>
-
 
   <hr />
 
