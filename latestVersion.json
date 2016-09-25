@@ -1,9 +1,9 @@
 ﻿{
   "latest": {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "channel": "Preview",
     "downloadPage": "https://diskache.io/downloads.html",
-    "directLink": "https://losttechpers.blob.core.windows.net/releases/Diskache-0.2.0b.exe",
+    "directLink": "https://losttechpers.blob.core.windows.net/releases/DiskacheSetup-RC1.exe",
     "changesPage": "https://diskache.io/whatsnew.html"
   }
 }
