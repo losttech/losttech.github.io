@@ -64,9 +64,9 @@ var Diskache;
         IndexPage.disappear = function () {
             $('.appear-animation').css("opacity", 0);
         };
-        IndexPage.mainAnimationPlayed = "index.mainAnimation";
         return IndexPage;
     }());
+    IndexPage.mainAnimationPlayed = "index.mainAnimation";
     Diskache.IndexPage = IndexPage;
 })(Diskache || (Diskache = {}));
 //# sourceMappingURL=diskache.js.map

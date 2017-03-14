@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Diskache: disk caching utility">
   <meta name="author" content="Victor Milovanov">
-  
+
   <link rel="icon" href="img/LostTech.ico"/>
 
   <!-- Bootstrap Core CSS -->
@@ -106,6 +106,18 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <h2>What's new in Diskache Beta</h2>
+          <h3>Release Candidate 2</h3>
+          <ul>
+              <li><span class="category">CORE</span>: added support for substreams and aligned streams (lets cache entire disks through manual configuration)</li>
+              <li><span class="category">CORE</span>: fixed rebuild-cache failing</li>
+              <li><span class="category">CORE</span>: fixed cache corruption that could have been caused by intermittment cache write errors</li>
+              <li><span class="category">CORE</span>: on any critical hardware failure cached disks now go into failed state to prevent potential data loss</li>
+              <li><span class="category">CORE</span>: improved error reporting during cache initialization</li>
+              <li><span class="category">CORE</span>: disabled shared access to underlying devices to avoid IO errors</li>
+              <li><span class="category">UI</span>: create disk dialog now better filters drive letters</li>
+              <li><span class="category">UI</span>: when new disk is created, Diskache suggests to format it immediately</li>
+              <li><span class="category">UI</span>: on Windows 7 Diskache suggests to restart Explorer to see the new disk</li>
+          </ul>
         <h3>Release Candidate 1</h3>
         <ul>
           <li><span class="category">CORE</span>: Cache and Storage are now shared for reading when caching entire volumes</li>
@@ -147,14 +159,6 @@
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           <ul class="list-inline text-center">
             <li>
-              <a href="https://bitbucket.org/lost/diskache" style="cursor: not-allowed" onclick="return false;">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-bitbucket fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li>
               <a href="https://www.facebook.com/losttechllc">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
@@ -169,7 +173,7 @@
                 </span>
             </li>
           </ul>
-          <p class="copyright text-muted">Copyright &copy; <a href="about.html">Lost Tech LLC</a> 2015</p>
+          <p class="copyright text-muted">Copyright &copy; <a href="about.html">Lost Tech LLC</a> 2015-2017</p>
           <p class="copyright text-muted photo-credit">Site design: <a href="http://www.ironsummitmedia.com/">Iron Summit Media Strategies, LLC</a></p>
         </div>
       </div>
