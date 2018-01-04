@@ -1,6 +1,6 @@
 var Compat;
 (function (Compat) {
-    var Styles = (function () {
+    var Styles = /** @class */ (function () {
         function Styles() {
         }
         Styles.supports = function (style) {
@@ -12,7 +12,7 @@ var Compat;
 })(Compat || (Compat = {}));
 var Diskache;
 (function (Diskache) {
-    var ContactPage = (function () {
+    var ContactPage = /** @class */ (function () {
         function ContactPage() {
         }
         ContactPage.run = function () {
@@ -34,7 +34,7 @@ var Diskache;
 })(Diskache || (Diskache = {}));
 var Diskache;
 (function (Diskache) {
-    var IndexPage = (function () {
+    var IndexPage = /** @class */ (function () {
         function IndexPage() {
         }
         IndexPage.run = function () {
@@ -64,9 +64,9 @@ var Diskache;
         IndexPage.disappear = function () {
             $('.appear-animation').css("opacity", 0);
         };
+        IndexPage.mainAnimationPlayed = "index.mainAnimation";
         return IndexPage;
     }());
-    IndexPage.mainAnimationPlayed = "index.mainAnimation";
     Diskache.IndexPage = IndexPage;
 })(Diskache || (Diskache = {}));
 //# sourceMappingURL=diskache.js.map
