@@ -22,7 +22,7 @@ var Diskache;
                 var message = $("#message").val();
                 var body = message + "\r\n\r\n" + from + (phone ? "\r\n" + phone : "");
                 var productName = $("#product").val();
-                var link = "mailto:" + encodeURIComponent('"Diskache Contact Email"<contact@diskache.io>')
+                var link = "mailto:" + encodeURIComponent('"Lost Tech LLC"<contact@losttech.software>')
                     + "?subject=" + encodeURIComponent(productName)
                     + "&body=" + escape(body);
                 window.location.href = link;

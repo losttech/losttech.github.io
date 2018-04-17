@@ -98,6 +98,7 @@
         <ul>
           <li><a href="#tabs">Tabs</a></li>
           <li><a href="#stacking">Stacking</a></li>
+          <li><a href="#permanentlyVisible">Permanently visible elements</a></li>
           <li><a href="#helpers">Layout Helpers</a></li>
           <li><a href="#keyboard">Keyboard improvements</a></li>
           <li><a href="#oob">Out of box layouts</a></li>
@@ -153,14 +154,27 @@
         Columns=1 ensures, that you have a vertical stack. To make a horizontal stack, use Rows=1.
         You can combine different values of Columns and Rows to make a tile grid.
 
+        <h3 id="permanentlyVisible">Permanently visible elements</h3>
+        
+        Your custom layouts are now always visible on the screen (in V1 they would only appear when dragging a window with mouse).
+        That means, that you can add any WPF graphical elements to your layouts, that are visible permanently.
+        
+        <p></p>
+        For example, you could add text with
+        <a href="http://www.wpf-tutorial.com/basic-controls/the-textblock-control/" 
+           title="TextBlock tutorial">TextBlock</a>,
+        images with 
+        <a href="https://www.tutorialspoint.com/wpf/wpf_image.htm"
+           title="Image tutorial">Image</a>,
+        or any other WPF control to you screen with a custom layout.
+        
+        <p></p>
+        See an example in a <a href="http://stack.blogs.losttech.software/Resize-Grip/">blog post about adding a resize grip</a>.
+
+
         <h3 id="helpers">Layout Helpers</h3>
         <p></p>
         <h4>Hints</h4>
-        Your custom layouts are now always visible on the screen (in V1 they would only appear when dragging a window with mouse).
-        That means, that you can add any WPF graphical elements to your layouts, that are visible permanently.
-
-        <p></p>
-
         In V1 some out of box layous had graphical hints for where a window will be dropped.
         Those are only needed when there's drag in progress.
         To simplify hiding graphical elements like these, a new property was added,
@@ -204,9 +218,11 @@
         <h3 id="other">Other</h3>
         <ul>
           <li>fixed empty space around some windows</li>
-          <li>layouts from previous version should be upgraded;
+          <li>
+            layouts from previous version should be upgraded;
             they will still work, but a warning will be issued every time one is loaded;
-            see <a href="https://www.allanswered.com/post/kgnoz/how-do-i-upgrade-my-layouts-to-v2/">the upgrade guide</a></li>
+            see <a href="https://www.allanswered.com/post/kgnoz/how-do-i-upgrade-my-layouts-to-v2/">the upgrade guide</a>
+          </li>
         </ul>
 
         <hr />
