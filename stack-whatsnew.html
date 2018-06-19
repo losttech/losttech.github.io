@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Stack - What's New</title>
+  <title>Stack - What's New in v2.1</title>
   <meta name="description" content="What's new in the latest release of Stack Windows manager">
 
   <meta name="author" content="Victor Milovanov">
@@ -94,140 +94,118 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <h2>What's new in V2</h2>
+        <h2>The Widgets Update (v2.1)</h2>
+        <small>This update is rolled out gradually.
+          You might still have <a href="stack-whatsnew-2.0.html">2.0</a> until beginning of July 2018.
+          <br/>
+          Please, use our <a href="contact.html">contact form</a> if you want to get pre-release updates.</small>
+        <h3>Contents:</h3>
         <ul>
-          <li><a href="#tabs">Tabs</a></li>
-          <li><a href="#stacking">Stacking</a></li>
-          <li><a href="#permanentlyVisible">Permanently visible elements</a></li>
-          <li><a href="#helpers">Layout Helpers</a></li>
-          <li><a href="#keyboard">Keyboard improvements</a></li>
-          <li><a href="#oob">Out of box layouts</a></li>
-          <li><a href="#other">Other</a></li>
+          <li><a href="#widgets">Widgets</a></li>
+          <li><a href="#autolayout">Autolayout (preview)</a></li>
+          <li><a href="#keyboard" title="We've added an ability to assign hotkey combinations to move active window to a specific zone.">Zone hotkeys</a> and <a href="#mouse">'Which mouse button to use' setting</a></li>
+          <li><a href="#enterprise">Enterprise Subscription</a></li>
+          <li><a href="#fixes">Bug Fixes and Minor Improvements</a></li>
+          <li><a href="#breaking">Breaking Changes</a></li>
+          <li><a href="stack-whatsnew-2.0.html">What was new in V2</a></li>
         </ul>
 
-        <h3 id="tabs">Tabs</h3>
-        <p>You can add &lt;zones:WindowTabs&gt; element to show tabs over a zone, that has multiple windows.</p>
-        <img class="img-responsive" src="img/Stack-Tabs.gif" alt="Tabs Demo" />
-
-        <p></p>
-        The full syntax is:<pre>&lt;zones:WindowTabs VisibilityCondition="AlwaysVisible"
-            ItemsSource="{Binding Windows, Source={x:Reference YourZoneName}}" /&gt;</pre>
-        You must mark you zone like this: <code>&lt;zones:Zone x:Name="YourZoneName"/&gt;</code>
-
+        <h3 id="widgets">Widgets</h3>
+        With v2.1 we are adding an ability to create and share custom widgets,
+        that can be put on Stack layouts.
         <p></p>
 
-        <code>VisibilityCondition</code> can have one of the following values:<ul>
-          <li><b>MultipleItems</b> (default) - only appear when there are multiple windows.</li>
-          <li>AlwaysVisible - tabs are always visible.</li>
-          <li>OneItem - tabs appear only when there's at least one window open.</li>
-        </ul>
-
+        Initial release of Stack v2.1 contains a single sample widget,
+        and a small amount of composable tools, that enable creation of
+        more complicated data-rich widgets inline inside your layouts.
         <p></p>
 
-        <code>ItemsSource</code> can also combine windows from multiple zones into a single list of tabs using its extended syntax (example from updated Large Horizontal Left)
-<pre>&lt;zones:WindowTabs&gt;
-  &lt;zones:WindowTabs.ItemsSource&gt;
-    &lt;CompositeCollection&gt;
-      &lt;zones:ZoneElement Content="{Binding ViewModel, Source={x:Reference SideStack}}" /&gt;
-      &lt;CollectionContainer Collection="{Binding Windows, Source={x:Reference SideSingle}}" /&gt;
-    &lt;/CompositeCollection&gt;
-  &lt;/zones:WindowTabs.ItemsSource&gt;
-&lt;/zones:WindowTabs&gt;</pre>
-        You can have as many CollectionContainers and ZoneElemens as you want.
-        <br />Note: <code>ZoneElement</code> is useful for <a href="#Stacking">stacked zones</a>.
-
-        <h3 id="stacking">Stacking</h3>
-        In V2 you can make windows arrange themselves inside your zones using <a href="http://www.wpf-tutorial.com/panels/introduction-to-wpf-panels/">WPF Panels</a>.
-        <br />Only <code>UniformGrid</code> currently has useful behavior, that is to allow automatic vertical or horizontal stacking of windows.
-        <img class="img-responsive" src="img/Stack-Stacking.gif" alt="Stacking demo" />
-
+        <small>An example of custom widget for an RSS feed, defined in Stack layout:</small>
+        <img class="img-responsive" src="img/Stack-HanselmanFeedWidget.gif" alt="Sample RSS feed widget" />
+        <small>Details on how to create highly customized widget like this one will be later published in our <a href="http://stack.blogs.losttech.software/">blog</a> 
+          (<a href='https://feedly.com/i/subscription/feed%2Fhttp%3A%2F%2Fstack.blogs.losttech.software%2Ffeed.xml'
+              target='blank'>+ Feedly</a>).</small>
         <p></p>
 
-        Here's how you can do it:
-        <pre>&lt;zones:Zone&gt;
-  &lt;zones:Zone.Layout&gt;
-    &lt;ItemsPanelTemplate&gt;
-      &lt;UniformGrid Columns="1" /&gt;
-    &lt;/ItemsPanelTemplate&gt;
-  &lt;/zones:Zone.Layout&gt;
-&lt;/zones:Zone&gt;</pre>
-        Columns=1 ensures, that you have a vertical stack. To make a horizontal stack, use Rows=1.
-        You can combine different values of Columns and Rows to make a tile grid.
+        Our first out of box widget simply allows you to embed any web page into your layout:
+        <img class="img-responsive" src="img/Stack-YouTubeWidget.png" alt="Sample YouTube video embedded into Stack layout" />
+        <p></p>
 
-        <h3 id="permanentlyVisible">Permanently visible elements</h3>
+        In this example I've embedded a little YouTube TV interface with a simple line in the layout:
+        <pre>&lt;widgets:WebView Height="200" URL="https://www.youtube.com/tv"/&gt;</pre>
+        To use standard widgets you need to add a <code>widgets</code> reference to the beginning like this:
+        <pre>xmlns:...
+xmlns:widgets="clr-namespace:LostTech.Stack.Widgets;assembly=Stack"
+xmlns:...</pre>
+        Failing to do so will likely cause Stack to crash when attempting to load this layout.
+        <p></p>
+
+        We decided to go with the WebView first, as embedding web pages opens the most possibilities.
+        You can find a lot of embeddable widgets on the Internet: news/Twitter feeds, weather, stocks/currencies, maps, and many others.
+        <p></p>
+
+        Out of box Stack widgets are
+        <a href="https://github.com/losttech/Stack.Widgets">open sourced</a>
+        under Apache 2.0 license.
+        If you want your awesome custom widget to be shipped with the next version of Stack,
+        submit a pull request to this repository.
+        <br />
+        <i>Note</i><small>: we will only accept general use widgets,
+          or widgets for broadly used services, such as YouTube, Facebook, etc.
+          You will still be able to distribute your widget separately.
+        </small>
         
-        Your custom layouts are now always visible on the screen (in V1 they would only appear when dragging a window with mouse).
-        That means, that you can add any WPF graphical elements to your layouts, that are visible permanently.
-        
+        <h3 id="autolayout">Autolayout (preview)</h3>
+        Stack can now automatically assign most newly opened windows to their closest zone. This is called <i>capturing</i>.
         <p></p>
-        For example, you could add text with
-        <a href="http://www.wpf-tutorial.com/basic-controls/the-textblock-control/" 
-           title="TextBlock tutorial">TextBlock</a>,
-        images with 
-        <a href="https://www.tutorialspoint.com/wpf/wpf_image.htm"
-           title="Image tutorial">Image</a>,
-        or any other WPF control to you screen with a custom layout.
-        
+        <small>See an example of Visual Studio Code taking its place in the layout:</small>
+        <img class="img-responsive" src="img/Stack-AutoLayout.gif" alt="Capture Visual Studio Code demo" />
+
         <p></p>
-        See an example in a <a href="http://stack.blogs.losttech.software/Resize-Grip/">blog post about adding a resize grip</a>.
-
-
-        <h3 id="helpers">Layout Helpers</h3>
-        <p></p>
-        <h4>Hints</h4>
-        In V1 some out of box layous had graphical hints for where a window will be dropped.
-        Those are only needed when there's drag in progress.
-        To simplify hiding graphical elements like these, a new property was added,
-        that can be attached to any element to indicate it should disapper when no window is being dragged.
-
-        To mark your graphical element as a hint, add zones:Layout.IsHint="True" property to it like this (from OOB Horizontal layout):
-        <pre>&lt;Border Width="160" Height="160" Background="#44F" <b>zones:Layout.IsHint="True"</b>&gt;</pre>
+        This feature is off by default. You can enable its various aspects on the General settings page.
+        <img class="img-responsive" src="img/Stack-CaptureSettings.png" alt="Capture settings" />
 
         <p></p>
 
-        <h4>Percentage sizing</h4>
-        We've introduced <code>PercentageConverter</code>, that you can take advantage of in your layouts.
-        It allows you (but not limited to) to set zone size as <i>a percentage of the current size</i> of another layout element.
+        <h3 id="mouse">'Which mouse button to use' setting</h3>
+        You can now change which mouse button is used to drag windows between zones.
+        <img class="img-responsive" src="img/Stack-ChooseMouseButton.png" alt="Mouse button setting" />
+
+        <p></p>
+        <h3 id="keyboard">Zone hotkeys</h3>
+        We've added an ability to assign hotkey combinations to move active window to the zone.
+        <br />
+        For example: <pre>&lt;zones:Zone x:Name="Main" <b>behavior:Hotkey.MoveTo="Windows+Oem5"</b> /&gt;</pre>
+        <p></p>
+        You need to reference <code>behavior</code> in the beginning of the layout like this:
+        <pre>xmlns:...
+xmlns:behavior="clr-namespace:LostTech.Stack.Behavior;assembly=Stack"
+xmlns:...</pre>
+        Failing to do so will likely cause Stack to crash when attempting to load this layout.
+        <p></p>
+        For some keys it might be unclear what to put into <code>Hotkey.MoveTo=</code>,
+        so we've added a tool into Hotkeys section of Stack Settings,
+        that lets you press a key combination, and get its textual description:
+        <img class="img-responsive" src="img/Stack-HotkeyTool.png" alt="Hotkey tool in Settings" />
 
         <p></p>
 
-        <pre>&lt;zones:Zone MinWidth="160"
-  Width="{Binding ActualWidth, ElementName=SomeOtherNamedLayoutElement, <b>Converter={StaticResouce PercentageConverter}, ConverterParameter=25</b>}" /&gt;</pre>
-
-        <p></p>
-
-        <h3 id="keyboard">Keyboard improvements</h3>
-        We fixed a number of bugs in keyboard movement behavior, and made it more natural.
-
-        <p></p>
-
-        <h3 id="oob">Out of box layous</h3>
-        Most of the out of box layouts now take advantage of the new layout features.
+        <h3 id="fixes">Bug Fixes and Minor Improvements</h3>
         <ul>
-          <li><i>Large</i> and <i>Wide</i> layouts have tabs, that cover main area, and use stacks for their sides.</li>
-          <li>Main zones of vertical layous are now tabbed.</li>
-          <li>
-            We introduced new <i>OOB Horizontal</i> layout, that replaces <i>Small Horizontal</i> layous.
-            Its side zones collapse and expand dynamically.
-            Its main zone is tabbed as well.
-          </li>
+          <li>full support for Windows Insider builds</li>
+          <li>'Close window' buttons in tabs</li>
+          <li>improved startup time</li>
+          <li>simplified tray menu</li>
+          <li>better tracking for when windows are closed</li>
+          <li>peform several operations in background</li>
         </ul>
 
-        <p></p>
-
-        <h3 id="other">Other</h3>
-        <ul>
-          <li>fixed empty space around some windows</li>
-          <li>
-            layouts from previous version should be upgraded;
-            they will still work, but a warning will be issued every time one is loaded;
-            see <a href="https://www.allanswered.com/post/kgnoz/how-do-i-upgrade-my-layouts-to-v2/">the upgrade guide</a>
-          </li>
-        </ul>
+        <h3 id="v2">What's new in V2</h3>
+        <a href="stack-whatsnew-2.0.html">See what features were added in V2 ></a>
 
         <hr />
         <p>
-          <a href="https://www.microsoft.com/en-us/store/p/stack-wm/9p4rj8rl7qgs?utm_source=losttech">Get Stack V2 from Windows Store ></a>
+          <a href="https://www.microsoft.com/en-us/store/p/stack-wm/9p4rj8rl7qgs?utm_source=losttech">Get Stack V2.1 from Windows Store ></a>
         </p>
       </div>
     </div>
