@@ -1,0 +1,210 @@
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Gradient</title>
+  <meta name="description" content="TensorFlow for .NET">
+
+  <meta name="author" content="Victor Milovanov">
+
+  <link rel="icon" href="img/LostTech.ico"/>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Clean CSS -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+  <link href="css/diskache.css" rel="stylesheet" />
+
+  <!-- Custom Fonts -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="js/clean-blog.min.js"></script>
+
+  <script src="js/diskache.js"></script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-107799728-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="stack.html">Stack</a>
+          </li>
+          <li>
+            <a href="mine.html">Mine</a>
+          </li>
+          <li>
+            <a href="about.html">About</a>
+          </li>
+          <li>
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25)), url('img/gradient-post-bg.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Gradient for .NET</h1>
+          <div class="meta">train neural networks with TensorFlow in C#</div>
+          <div class="meta padding">&nbsp;</div>
+          <div class="meta padding">&nbsp;</div>
+          <div class="meta">
+            <a href="https://github.com/losttech/Gradient/#contents" class="btn btn-primary">Try Preview 1</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p>
+          Gradient allows you to create, train, and use machine learning models with the full power of TensorFlow API on .NET
+        </p>
+
+        <pre style="font-family:Consolas;font-size:13px;color:black;background:white;"><span style="color:blue;">var</span>&nbsp;input&nbsp;=&nbsp;<span style="color:#2b91af;">tf</span>.placeholder(<span style="color:#2b91af;">tf</span>.float32,&nbsp;<span style="color:blue;">new</span>&nbsp;<span style="color:#2b91af;">TensorShape</span>(<span style="color:blue;">null</span>,&nbsp;1),&nbsp;name:&nbsp;<span style="color:#a31515;">&quot;x&quot;</span>);
+<span style="color:blue;">var</span>&nbsp;output&nbsp;=&nbsp;<span style="color:#2b91af;">tf</span>.placeholder(<span style="color:#2b91af;">tf</span>.float32,&nbsp;<span style="color:blue;">new</span>&nbsp;<span style="color:#2b91af;">TensorShape</span>(<span style="color:blue;">null</span>,&nbsp;1),&nbsp;name:&nbsp;<span style="color:#a31515;">&quot;y&quot;</span>);
+ 
+<span style="color:blue;">var</span>&nbsp;hiddenLayer&nbsp;=&nbsp;<span style="color:#2b91af;">tf</span>.<span style="color:#2b91af;">layers</span>.dense(input,&nbsp;hiddenSize,
+&nbsp;&nbsp;&nbsp;&nbsp;activation:&nbsp;<span style="color:#2b91af;">tf</span>.sigmoid_fn,
+&nbsp;&nbsp;&nbsp;&nbsp;kernel_initializer:&nbsp;<span style="color:blue;">new</span>&nbsp;<span style="color:#2b91af;">ones_initializer</span>(),
+&nbsp;&nbsp;&nbsp;&nbsp;bias_initializer:&nbsp;<span style="color:blue;">new</span>&nbsp;<span style="color:#2b91af;">random_uniform_initializer</span>(minval:&nbsp;-x1,&nbsp;maxval:&nbsp;-x0),
+&nbsp;&nbsp;&nbsp;&nbsp;name:&nbsp;<span style="color:#a31515;">&quot;hidden&quot;</span>);
+ 
+<span style="color:blue;">var</span>&nbsp;model&nbsp;=&nbsp;<span style="color:#2b91af;">tf</span>.<span style="color:#2b91af;">layers</span>.dense(hiddenLayer,&nbsp;units:&nbsp;1,&nbsp;name:&nbsp;<span style="color:#a31515;">&quot;output&quot;</span>);
+ 
+<span style="color:blue;">var</span>&nbsp;cost&nbsp;=&nbsp;<span style="color:#2b91af;">tf</span>.<span style="color:#2b91af;">losses</span>.mean_squared_error(output,&nbsp;model);
+ 
+<span style="color:blue;">var</span>&nbsp;training&nbsp;=&nbsp;<span style="color:blue;">new</span>&nbsp;<span style="color:#2b91af;">GradientDescentOptimizer</span>(learning_rate:&nbsp;learningRate).minimize(cost);</pre>
+        <span class="caption text-muted">Code sample.</span>
+
+
+        <h3>Features</h3>
+        <ul>
+          <li>
+            <h4>Access the full set of <a href="https://www.tensorflow.org/versions/r1.10/api_docs/python/tf">TensorFlow APIs</a></h4>
+            <ul>
+              <li>Computation graph building and sessions</li>
+              <li>Keras-style <a href="https://medium.com/tensorflow/standardizing-on-keras-guidance-on-high-level-apis-in-tensorflow-2-0-bad2b04c819a">high-level APIs</a></li>
+              <li>Data pipelines and checkpoints</li>
+              <li>Estimators</li>
+              <li>Full power of Contrib</li>
+              <li>Many more</li>
+            </ul>
+          </li>
+          <li><h4>Train and run models on any platform: CPUs, GPUs, TPUs</h4></li>
+          <li><h4>Use distributed training features</h4></li>
+          <li>
+            <h4>Track your training progress with <a href="https://www.tensorflow.org/guide/summaries_and_tensorboard">Tensorboard</a></h4>
+            <p>
+              <img class="img-responsive" src="https://www.tensorflow.org/images/mnist_tensorboard.png" title="Tensorboard screenshot"/>
+            </p>
+          </li>
+          <li>
+            <h4>Easily port numerous existing TensorFlow examples</h4>
+            <small>from simple numerical computation samples to state-of-art models like <a href="https://en.wikipedia.org/wiki/AlphaZero">AlphaZero</a>, the new world's Go champion by DeepMind</small>
+          </li>
+          <li>
+            <h4>Use C# for machine learning</h4>
+            <ul>
+              <li>Static typing when possible, fallback to dynamic in corner cases</li>
+              <li>IDE support: completion, documentation hints for classes, functions, and parameters</li>
+              <li>Experimental support for C# features, such as ranges</li>
+              <li>Can be used from C# interactive, and C# <a href="https://github.com/zabirauf/icsharp">kernel for Jupyter</a></li>
+            </ul>
+          </li>
+        </ul>
+        <hr/>
+        <h4>
+          <a href="https://github.com/losttech/Gradient/#contents">Get started</a> with an early tech preview,
+          or <a href="mailto:%22Lost%20Tech%20LLC%22%3Ccontact%40losttech.software%3E?subject=Gradient%20News&body=Please%2C%20sign%20me%20up%20for%20the%20Gradient%20News%20and%20Releases%20newletter%0A%0A">sign up</a> for Gradient News and Releases.
+        </h4>
+        <hr/>
+      </div>
+    </div>
+  </div>
+</article>
+
+<p class="copyright text-muted photo-credit">
+  Photo credit: <a href="https://www.pexels.com/@florian-weihmann-459786">Florian Weihmann from Pexels</a>
+</p>
+
+
+  <hr />
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <ul class="list-inline text-center">
+            <li>
+              <a href="https://www.facebook.com/losttechllc">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-windows fa-stack-1x fa-inverse"></i>
+                </span>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; <a href="about.html">Lost Tech LLC</a> 2015-2019</p>
+          <p class="copyright text-muted photo-credit">Site design: <a href="http://www.ironsummitmedia.com/">Iron Summit Media Strategies, LLC</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
