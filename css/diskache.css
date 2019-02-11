@@ -20,6 +20,37 @@ li .category {
 .intro-header .page-heading h1 {
   font-size: 48px;
 }
+td.win,
+td.loose {
+  font-weight: bolder;
+}
+.win {
+  color: green;
+}
+.loose {
+  color: red;
+}
+.feature-comparison {
+  font-size: large;
+}
+.feature-comparison,
+.feature-comparison td,
+.feature-comparison tr {
+  border: 1px solid black;
+}
+.feature-comparison thead td {
+  font-weight: bold;
+  text-align: center;
+}
+.feature-comparison td {
+  margin: initial;
+  padding: 6pt;
+}
+.feature-comparison td.win,
+.feature-comparison td.loose {
+  text-align: center;
+  font-size: larger;
+}
 .bottom-right-icon {
   line-height: 24px;
   margin-top: -48px;
