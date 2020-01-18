@@ -5,7 +5,7 @@
 	<MainBundle
 		Name="LostTechLLC.MineETH"
 		Version="1.13.2.0"
-		Publisher="CN=CD68BA36-034D-406B-A7AB-D45B2AD9ED55"
+		Publisher="CN=Lost Tech LLC, O=Lost Tech LLC, STREET=3825 140th Ave NE, L=Bellevue, S=Washington, PostalCode=98005, C=US"
 		Uri="https://losttech.software/Downloads/Mine/Mine%20Store_1.13.2.0_Test/Mine%20Store_1.13.2.0_x64.appxbundle" />
 	<UpdateSettings>
 		<OnLaunch
