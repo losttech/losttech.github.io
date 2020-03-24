@@ -6,56 +6,32 @@
 		Name="LostTechLLC.Fuzoom"
 		Version="1.0.0.0"
 		Publisher="CN=Lost Tech LLC, O=Lost Tech LLC, STREET=3825 140th Ave NE, L=Bellevue, S=Washington, PostalCode=98005, C=US"
-		Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Fuzoom.WinUI_1.0.0.0_x86_x64_Debug.msixbundle" />
+		Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Test/Fuzoom.WinUI_1.0.0.0_x64.msixbundle" />
 	<Dependencies>
 		<Package
-			Name="Microsoft.NET.CoreRuntime.2.2"
+			Name="Microsoft.NET.Native.Framework.2.2"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-			Version="2.2.27902.3"
-			ProcessorArchitecture="x86"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.NET.CoreRuntime.2.2.appx" />
-		<Package
-			Name="Microsoft.NET.CoreRuntime.2.2"
-			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-			Version="2.2.27902.3"
+			Version="2.2.27912.0"
 			ProcessorArchitecture="x64"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.NET.CoreRuntime.2.2.appx" />
+			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Test/Dependencies/x64/Microsoft.NET.Native.Framework.2.2.appx" />
 		<Package
-			Name="Microsoft.NET.CoreFramework.Debug.2.2"
+			Name="Microsoft.NET.Native.Runtime.2.2"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-			Version="2.2.28529.0"
-			ProcessorArchitecture="x86"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.NET.CoreFramework.Debug.2.2.appx" />
-		<Package
-			Name="Microsoft.NET.CoreFramework.Debug.2.2"
-			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-			Version="2.2.28529.0"
+			Version="2.2.28604.0"
 			ProcessorArchitecture="x64"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.NET.CoreFramework.Debug.2.2.appx" />
+			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Test/Dependencies/x64/Microsoft.NET.Native.Runtime.2.2.appx" />
 		<Package
-			Name="Microsoft.VCLibs.140.00.Debug"
+			Name="Microsoft.VCLibs.140.00"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="14.0.27810.0"
 			ProcessorArchitecture="x64"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.VCLibs.x64.Debug.14.00.appx" />
+			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Test/Dependencies/x64/Microsoft.VCLibs.x64.14.00.appx" />
 		<Package
-			Name="Microsoft.VCLibs.140.00.Debug"
-			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-			Version="14.0.27810.0"
-			ProcessorArchitecture="x86"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.VCLibs.x86.Debug.14.00.appx" />
-		<Package
-			Name="Microsoft.VCLibs.140.00.Debug.UWPDesktop"
+			Name="Microsoft.VCLibs.140.00.UWPDesktop"
 			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
 			Version="14.0.27810.0"
 			ProcessorArchitecture="x64"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x64/Microsoft.VCLibs.x64.Debug.14.00.Desktop.appx" />
-		<Package
-			Name="Microsoft.VCLibs.140.00.Debug.UWPDesktop"
-			Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US"
-			Version="14.0.27810.0"
-			ProcessorArchitecture="x86"
-			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Debug_Test/Dependencies/x86/Microsoft.VCLibs.x86.Debug.14.00.Desktop.appx" />
+			Uri="https://losttech.software/Downloads/FuZoom/Fuzoom.WinUI_1.0.0.0_Test/Dependencies/x64/Microsoft.VCLibs.x64.14.00.Desktop.appx" />
 	</Dependencies>
 	<UpdateSettings>
 		<OnLaunch
