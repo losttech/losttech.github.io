@@ -10,8 +10,18 @@
 article p::first-letter {
   color: #ff6a00;
 }
+footnote {
+  display: block;
+  font-size: x-small;
+}
 li .category {
   color: #ff6a00;
+}
+.buy-title {
+  vertical-align: top;
+}
+.buy-title p {
+  margin: 10px 0;
 }
 .photo-credit {
   text-align: center;
@@ -47,7 +57,8 @@ td.loose {
   padding: 6pt;
 }
 .feature-comparison td.win,
-.feature-comparison td.loose {
+.feature-comparison td.loose,
+.feature-comparison td.tie {
   text-align: center;
   font-size: larger;
 }
