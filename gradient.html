@@ -96,9 +96,9 @@
           <div class="meta padding">&nbsp;</div>
           <div class="meta padding">&nbsp;</div>
           <div class="meta">
-            <a href="https://github.com/losttech/Gradient/#contents" class="btn btn-primary">Try Preview 7</a>
+            <a href="https://losttech.software/buy_gradient.html" class="btn btn-primary">Get Now</a>
             <p>
-              <small><a href="https://ml.blogs.losttech.software/What-New-In-Preview-6.4/">See What's New!</a></small>
+              <small><a href="https://ml.blogs.losttech.software/TF-1.15-Release-Candidate/">See What's New!</a></small>
             </p>
           </div>
         </div>
@@ -159,10 +159,17 @@
           </li>
           <li>
             <h4>Easily port numerous existing TensorFlow examples</h4>
-            <small>
-              from simple numerical computation samples to state-of-art models like
-              <a href="https://en.wikipedia.org/wiki/AlphaZero">AlphaZero</a> - the new world's Go champion by DeepMind
-            </small>
+            <ul>
+              <li>
+                From simple numerical computation samples to state-of-art models like
+                <a href="https://en.wikipedia.org/wiki/AlphaZero">AlphaZero</a> - the new world's Go champion by DeepMind.
+              </li>
+              <li>
+                Our <a href="https://habr.com/post/453232/">GPT-2 demo</a> was built in one week just a month
+                after OpenAI released their first model, and included both training and infrerence,
+                demonstrating <strong>incredible time-to-market with LostTech.TensorFlow</strong>
+              </li>
+            </ul>
           </li>
           <li>
             <h4>Get started quickly with a collection of <a href="https://github.com/losttech/Gradient-Samples">samples</a></h4>
@@ -175,15 +182,18 @@
             <ul>
               <li>Static typing when possible, fallback to dynamic in corner cases</li>
               <li>IDE support: code completion, documentation hints for classes, functions, and parameters</li>
-              <li>Experimental support for upcoming C# 8.0 features, such as ranges</li>
+              <li>Support for C# 8.0 features, such as ranges</li>
               <li>Can be used from C# interactive, and C# <a href="https://github.com/zabirauf/icsharp">kernel for Jupyter</a></li>
             </ul>
           </li>
           <li>
-            <h4>Use <a href="https://notebooks.azure.com/lost/projects/gradient-samples/html/FashionMNIST.ipynb">F# Jupyter notebook</a> to train deep learning models (provided by Azure for free)</h4>
-            <a href="https://notebooks.azure.com/lost/projects/gradient-samples/html/FashionMNIST.ipynb">
-              <img class="img-responsive" src="https://ml.blogs.losttech.software/images/NotebookScreenshot.png" alt="F# Jupyter Notebook screenshot" />
-            </a>
+            <h4>
+              LostTech.TensorFlow is about 18% faster than TensorFlow.NET
+              on a <a href="https://github.com/losttech/Gradient-Perf">CNN training benchmark</a>
+            </h4>
+            <p>
+              <img class="img-responsive" src="https://ml.blogs.losttech.software/images/perf-vs-tf.net.png" title="performance comparison" />
+            </p>
           </li>
         </ul>
         <p></p>
@@ -194,7 +204,7 @@
           <thead>
             <tr>
               <td></td>
-              <td style="width: 30%">TensorFlowSharp</td>
+              <td style="width: 30%">TensorFlow.NET</td>
               <td style="width: 30%">LostTech.TensorFlow</td>
             </tr>
           </thead>
@@ -203,12 +213,16 @@
             <tr><td>Train existing models</td><td class="win">✓</td><td class="win">✓</td></tr>
             <tr><td>Create new models with low-level API</td><td class="win">✓</td><td class="win">✓</td></tr>
             <tr><td>Create new models with high-level API</td><td class="loose">✗</td><td class="win">✓</td></tr>
+            <tr><td>Latest algorithms</td><td class="loose">Some</td><td class="win">Most</td></tr>
             <tr><td>Dependencies</td><td class="win">TF</td><td class="loose">TF&nbsp;+ Python</td></tr>
             <tr><td>TensorBoard integration</td><td class="loose">✗</td><td class="win">✓</td></tr>
             <tr><td>Estimators</td><td class="loose">✗</td><td class="win">✓</td></tr>
             <tr><td>Dataset manipulation via tf.data</td><td class="loose">✗</td><td class="win">✓</td></tr>
-            <tr><td>tf.contrib</td><td class="loose">✗</td><td class="win">✓</td></tr>
+            <tr><td>tf.contrib</td><td class="loose">✗</td><td class="win" title="Available, but not supported">✓*</td></tr>
             <tr><td>Commercial support</td><td class="loose">✗</td><td class="win">✓</td></tr>
+            <tr><td>Performance</td><td class="loose">1x</td><td class="win">1.18x</td></tr>
+            <tr><td>TPU support</td><td class="loose">✗</td><td class="win">✓</td></tr>
+            <tr><td>AMD GPU support</td><td class="loose">✗</td><td class="win">✓</td></tr>
           </tbody>
         </table>
         <p></p>
@@ -217,7 +231,7 @@
         <hr />
         <ul>
           <li><a href="https://ml.blogs.losttech.software/">Our Machine Learning Blog</a>: cool samples, LostTech.TensorFlow news, etc</li>
-          <li>See <a href="https://ml.blogs.losttech.software/What-New-In-Preview-6.4/">What's New</a> in the latest version</li>
+          <li>See <a href="https://ml.blogs.losttech.software/TF-1.15-Release-Candidate/">What's New</a> in the latest version</li>
           <li><a href="https://github.com/losttech/Gradient/#contents">Getting started</a></li>
           <li><a href="https://ml.blogs.losttech.software/Reinforcement-Learning-With-Unity-ML-Agents/">Reinforcement learning</a> with Unity ML Agents</li>
           <li><a href="https://habr.com/post/453232/">Writing billion songs with C# and Deep Learning</a> + <a href="https://billionsongs.azurewebsites.net/">Demo</a></li>
@@ -226,8 +240,7 @@
         </ul>
         <hr />
         <h4>
-          <a href="https://github.com/losttech/Gradient/#contents">Get started</a> with an early tech preview,
-          or <a href="mailto:%22Lost%20Tech%20LLC%22%3Ccontact%40losttech.software%3E?subject=TensorFlow%20News&body=Please%2C%20sign%20me%20up%20for%20the%20TensorFlow%20News%20and%20Releases%20newletter!%0A%0A">sign up</a> for LostTech.TensorFlow News and Releases.
+          <a href="https://losttech.software/buy_gradient.html">Get it now!</a>
         </h4>
         <hr />
       </div>
@@ -237,6 +250,8 @@
 
 <p class="copyright text-muted photo-credit">
   Photo credit: <a href="https://www.pexels.com/@florian-weihmann-459786">Florian Weihmann from Pexels</a>
+  <br />
+  TensorFlow, the TensorFlow logo and any related marks are trademarks of Google Inc.
 </p>
 
 
