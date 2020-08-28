@@ -1,7 +1,6 @@
 ﻿body {
-  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, serif;
   font-size: 20px;
-  color: #404040;
 }
 p {
   line-height: 1.5;
@@ -16,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
 /*a {
@@ -25,10 +24,6 @@ h6 {
 	&:focus {
 		color: @brand-primary;
 	}
-}*/
-/*a img:hover,
-a img:focus {
-  cursor: zoom-in;
 }*/
 blockquote {
   color: #808080;
@@ -46,7 +41,7 @@ hr.small {
   left: 0;
   width: 100%;
   z-index: 3;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .navbar-custom .navbar-brand {
   font-weight: 800;
@@ -104,14 +99,14 @@ hr.small {
     transition: transform 0.3s;
   }
   .navbar-custom.is-fixed .navbar-brand {
-    color: #404040;
+    color: #1f1f1f;
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
     color: #0085A1;
   }
   .navbar-custom.is-fixed .nav li a {
-    color: #404040;
+    color: #1f1f1f;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
@@ -163,7 +158,7 @@ hr.small {
   font-size: 24px;
   line-height: 1.1;
   display: block;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
 }
@@ -181,13 +176,13 @@ hr.small {
   line-height: 1.1;
 }
 .intro-header .post-heading .subheading {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 24px;
   margin: 10px 0 30px;
   font-weight: 600;
 }
 .intro-header .post-heading .meta {
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, serif;
   font-style: italic;
   font-weight: 300;
   font-size: 20px;
@@ -204,7 +199,7 @@ hr.small {
   }
 }
 .post-preview > a {
-  color: #404040;
+  color: #1f1f1f;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -229,7 +224,7 @@ hr.small {
 }
 .post-preview > .post-meta > a {
   text-decoration: none;
-  color: #404040;
+  color: #1f1f1f;
 }
 .post-preview > .post-meta > a:hover,
 .post-preview > .post-meta > a:focus {
@@ -319,7 +314,7 @@ form .row:first-child .floating-label-form-group {
   border-top: 1px solid #eee;
 }
 .btn {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
@@ -342,7 +337,7 @@ form .row:first-child .floating-label-form-group {
 }
 .pager li > a,
 .pager li > span {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 800;
@@ -362,7 +357,7 @@ form .row:first-child .floating-label-form-group {
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #808080;
-  background-color: #404040;
+  background-color: #1f1f1f;
   cursor: not-allowed;
 }
 ::-moz-selection {
