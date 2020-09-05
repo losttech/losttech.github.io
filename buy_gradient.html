@@ -127,7 +127,9 @@
                 <p><a class="btn btn-default buy" href="https://portal.azure.com/#create/losttechllc.tensorflow/preview">Buy</a></p>
                 <p title="Pay-As-You-Go offer can be used on your own infrastructure. Azure Subscription is only used for billing. Requires Internet access.">
                   <span class="text-muted" style="font-size: 60%;">
-                    via your Azure Subscription
+                    via <a href="#note-must-be-azure-owner"
+                           title="To purchase Pay-As-You-Go offer you must have an Owner role on you Azure Subscription"
+                           >your Azure Subscription*</a>
                     <br />
                     (<a href="#note-pay-as-you-go-onprem">can be used OnPrem</a>)
                   </span>
@@ -187,8 +189,12 @@
 </article>
 <section style="margin: 30px 10px">
   <footnote id="note-pay-as-you-go-onprem">* Pay-As-You-Go offer can be used on your own infrastructure. Azure Subscription is only used for billing. Requires Internet access.</footnote>
+  <footnote id="note-must-be-azure-owner">* To purchase Pay-As-You-Go offer you must have
+    an <a href="https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/grant-access-to-create-subscription?tabs=rest%2Crest-2#grant-access"
+    >Owner</a> role on you Azure Subscription.</footnote>
   <footnote id="note-pay-as-you-go-price">* Pay-As-You-Go is billed per hour. The price is tied to 20% of the price of renting host hardware (or similar) in Azure cloud plus taxes and Azure fees.</footnote>
-  <footnote id="note-pay-as-you-go-idle">*
+  <footnote id="note-pay-as-you-go-idle">
+    *
     Pay-As-You-Go bills for usage as long as the Software is running,
     even when it is idle. To avoid incurring costs, you should stop
     the Software, when it is not being used.
