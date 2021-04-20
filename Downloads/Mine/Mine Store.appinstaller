@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
 	Uri="https://losttech.software/Downloads/Mine/Mine Store.appinstaller"
-	Version="1.13.4.0" xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
+	Version="1.13.5.0" xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2">
 	<MainBundle
 		Name="LostTechLLC.MineETH"
-		Version="1.13.4.0"
+		Version="1.13.5.0"
 		Publisher="CN=Lost Tech LLC, O=Lost Tech LLC, STREET=3825 140th Ave NE, L=Bellevue, S=Washington, PostalCode=98005, C=US"
-		Uri="https://losttech.software/Downloads/Mine/Mine Store_1.13.4.0_Test/Mine Store_1.13.4.0_x64.appxbundle" />
+		Uri="https://losttech.software/Downloads/Mine/Mine Store_1.13.5.0_Test/Mine Store_1.13.5.0_x64.appxbundle" />
 	<UpdateSettings>
 		<OnLaunch
 			HoursBetweenUpdateChecks="0" />
